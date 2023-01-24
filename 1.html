@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://codechangers.com/physics.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
+
+  </head>
+  <body>
+    <a-scene id="myScene">
+      <a-entity environment="preset:dream"></a-entity>
+      <a-plane id="floor" static-body height="1000" width="1000" position="0 -0.02 0" color="black" rotation="-90 0 0"></a-plane>
+      <a-camera id="myCamera" position="0 1 0">
+        <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+      </a-camera>
+      <a-box static-body class="floor" position="0 0.5 -7" width="9" rotation="0 0 0" color="#4CC3D9"></a-box>
+      <a-sphere dynamic-body class="target" radius="0.5" position="0 1.5 -7" color="pink"></a-sphere>
+      <a-sphere dynamic-body class="target" radius="0.5" position="-2 1.5 -7" color="pink"></a-sphere>
+      <a-sphere dynamic-body class="target" radius="0.5" position="-4 1.5 -7" color="pink"></a-sphere>
+      <a-sphere dynamic-body class="target" radius="0.5" position="2 1.5 -7" color="pink"></a-sphere>
+      <a-sphere dynamic-body class="target" radius="0.5" position="4 1.5 -7" color="pink"></a-sphere>
+      <a-icosahedron static-body class="target" random-color radius="1" position="-2 3 -5"></a-icosahedron>
+      <a-icosahedron static-body class="target" color="white" radius="1" position="2 3 -5"></a-icosahedron>
+      <a-icosahedron static-body class="target" color="#696969" radius="1" position="-2 3 -10"></a-icosahedron>
+      <a-icosahedron static-body class="target" color="#4CC3D9"radius="1" position="2 3 -10"></a-icosahedron>
+      <a-icosahedron static-body class="target" random-color radius="1" position="-2 8 -5"></a-icosahedron>
+      <a-icosahedron static-body class="target" random-color radius="1" position="2 8 -5"></a-icosahedron>
+      <a-icosahedron static-body class="target" random-color radius="1" position="-2 8 -10"></a-icosahedron>
+      <a-icosahedron static-body class="target" random-color radius="1" position="2 8 -10"></a-icosahedron>
+      
+      <a-entity
+      static-body
+      id="robot1"
+      gltf-model="robot1.gltf"
+      animation-mixer="clip:nod"
+      position="-8 2 -10"
+      scale="0.3 0.3 0.3"
+      ></a-entity>
+
+      <a-entity
+      static-body
+      id="robot"
+      gltf-model="robot1.gltf"
+      animation-mixer="clip:nod"
+      position="8 2 -10"
+      scale="0.3 0.3 0.3"
+      rotation="0 180 0"
+      ></a-entity>
+    </a-scene>
+    </a-scene>
+  </body>
+  <script src="https://codechangers.com/camps2019/vr/shoot-partial.js"></script>
+  <script src="script1.js"></script>
+  <script>nextLevel = 'gameover1.html';</script>
+</html>
